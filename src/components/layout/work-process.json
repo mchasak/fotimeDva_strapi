@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_layout_work_processes",
+  "info": {
+    "displayName": "WorkProcess",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "step": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.work-step"
+    }
+  }
+}

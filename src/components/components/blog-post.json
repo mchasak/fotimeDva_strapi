@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_components_blog_posts",
+  "info": {
+    "displayName": "BlogPost",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "text": {
+      "type": "blocks"
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}

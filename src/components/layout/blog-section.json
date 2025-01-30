@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_layout_blog_sections",
+  "info": {
+    "displayName": "BlogSection",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "blog": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.blog-post",
+      "max": 3
+    }
+  }
+}
