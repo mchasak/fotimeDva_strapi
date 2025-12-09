@@ -1,16 +1,16 @@
 {
-  "collectionName": "components_layout_hero_sections",
+  "collectionName": "components_layout_service_items",
   "info": {
-    "displayName": "Hero Section",
+    "displayName": "ServiceItem",
     "description": ""
   },
   "options": {},
   "attributes": {
-    "heading": {
+    "title": {
       "type": "string"
     },
-    "subHeading": {
-      "type": "string"
+    "description": {
+      "type": "text"
     },
     "image": {
       "type": "media",
@@ -23,15 +23,16 @@
         "audios"
       ]
     },
-    "link": {
-      "type": "component",
-      "repeatable": false,
-      "component": "components.link"
-      },
-    "advantages": {
+    "reverseOrder": {
+      "type": "boolean"
+    },
+    "price": {
+      "type": "integer"
+    },
+    "list": {
       "type": "component",
       "repeatable": true,
-      "component": "components.advantage"
+      "component": "components.work-step"
     }
   }
 }

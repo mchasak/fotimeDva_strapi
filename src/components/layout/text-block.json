@@ -1,20 +1,21 @@
 {
   "collectionName": "components_layout_text_blocks",
   "info": {
-    "displayName": "Text Block"
+    "displayName": "Text Block",
+    "description": ""
   },
   "options": {},
   "attributes": {
     "title": {
       "type": "string"
     },
-    "description": {
-      "type": "text"
-    },
     "link": {
       "type": "component",
       "repeatable": false,
       "component": "components.link"
+    },
+    "description": {
+      "type": "blocks"
     }
   }
 }

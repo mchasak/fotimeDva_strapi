@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_layout_work_previews",
+  "info": {
+    "displayName": "Work Preview"
+  },
+  "options": {},
+  "attributes": {
+    "images": {
+      "allowedTypes": [
+        "images",
+        "files"
+      ],
+      "type": "media",
+      "multiple": true
+    },
+    "link": {
+      "type": "component",
+      "repeatable": false,
+      "component": "components.link"
+    }
+  }
+}

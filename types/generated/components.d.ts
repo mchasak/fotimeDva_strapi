@@ -25,6 +25,19 @@ export interface ComponentsBlogPost extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsGalleryImage extends Struct.ComponentSchema {
+  collectionName: 'components_components_gallery_images';
+  info: {
+    description: '';
+    displayName: 'Gallery Image';
+  };
+  attributes: {
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    imageSize: Schema.Attribute.Enumeration<['big', 'long', 'tall', 'normal']> &
+      Schema.Attribute.DefaultTo<'normal'>;
+  };
+}
+
 export interface ComponentsLink extends Struct.ComponentSchema {
   collectionName: 'components_components_links';
   info: {
@@ -75,6 +88,16 @@ export interface ComponentsService extends Struct.ComponentSchema {
   };
 }
 
+export interface ComponentsServicePoint extends Struct.ComponentSchema {
+  collectionName: 'components_components_service_points';
+  info: {
+    displayName: 'ServicePoint';
+  };
+  attributes: {
+    item: Schema.Attribute.String;
+  };
+}
+
 export interface ComponentsSocials extends Struct.ComponentSchema {
   collectionName: 'components_components_socials';
   info: {
@@ -89,12 +112,12 @@ export interface ComponentsSocials extends Struct.ComponentSchema {
 export interface ComponentsWorkStep extends Struct.ComponentSchema {
   collectionName: 'components_components_work_steps';
   info: {
-    displayName: 'WorkStep';
+    description: '';
+    displayName: 'ServiceAttribute';
   };
   attributes: {
-    description: Schema.Attribute.Text;
     icon: Schema.Attribute.Enumeration<['calendar', 'camera', 'edit', 'cloud']>;
-    title: Schema.Attribute.String;
+    item: Schema.Attribute.Text;
   };
 }
 
@@ -112,6 +135,18 @@ export interface LayoutBlogSection extends Struct.ComponentSchema {
         },
         number
       >;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface LayoutContactForm extends Struct.ComponentSchema {
+  collectionName: 'components_layout_contact_forms';
+  info: {
+    description: '';
+    displayName: 'Contact Form';
+  };
+  attributes: {
+    socials: Schema.Attribute.Component<'components.socials', true>;
     title: Schema.Attribute.String;
   };
 }
@@ -171,6 +206,16 @@ export interface LayoutHeroSection extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutImageList extends Struct.ComponentSchema {
+  collectionName: 'components_layout_image_lists';
+  info: {
+    displayName: 'Image List';
+  };
+  attributes: {
+    image: Schema.Attribute.Component<'components.gallery-image', true>;
+  };
+}
+
 export interface LayoutMiniGallery extends Struct.ComponentSchema {
   collectionName: 'components_layout_mini_galleries';
   info: {
@@ -198,6 +243,22 @@ export interface LayoutReviews extends Struct.ComponentSchema {
   };
 }
 
+export interface LayoutServiceItem extends Struct.ComponentSchema {
+  collectionName: 'components_layout_service_items';
+  info: {
+    description: '';
+    displayName: 'ServiceItem';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    list: Schema.Attribute.Component<'components.work-step', true>;
+    price: Schema.Attribute.Integer;
+    reverseOrder: Schema.Attribute.Boolean;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface LayoutServices extends Struct.ComponentSchema {
   collectionName: 'components_layout_services';
   info: {
@@ -213,12 +274,38 @@ export interface LayoutServices extends Struct.ComponentSchema {
 export interface LayoutTextBlock extends Struct.ComponentSchema {
   collectionName: 'components_layout_text_blocks';
   info: {
+    description: '';
     displayName: 'Text Block';
   };
   attributes: {
-    description: Schema.Attribute.Text;
+    description: Schema.Attribute.Blocks;
     link: Schema.Attribute.Component<'components.link', false>;
     title: Schema.Attribute.String;
+  };
+}
+
+export interface LayoutTextImage extends Struct.ComponentSchema {
+  collectionName: 'components_layout_text_images';
+  info: {
+    description: '';
+    displayName: 'Text Image';
+  };
+  attributes: {
+    description: Schema.Attribute.Blocks;
+    image: Schema.Attribute.Media<'images' | 'files'>;
+    reverseOrder: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
+    title: Schema.Attribute.String;
+  };
+}
+
+export interface LayoutWorkPreview extends Struct.ComponentSchema {
+  collectionName: 'components_layout_work_previews';
+  info: {
+    displayName: 'Work Preview';
+  };
+  attributes: {
+    images: Schema.Attribute.Media<'images' | 'files', true>;
+    link: Schema.Attribute.Component<'components.link', false>;
   };
 }
 
@@ -239,21 +326,28 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'components.advantage': ComponentsAdvantage;
       'components.blog-post': ComponentsBlogPost;
+      'components.gallery-image': ComponentsGalleryImage;
       'components.link': ComponentsLink;
       'components.logo': ComponentsLogo;
       'components.review': ComponentsReview;
       'components.service': ComponentsService;
+      'components.service-point': ComponentsServicePoint;
       'components.socials': ComponentsSocials;
       'components.work-step': ComponentsWorkStep;
       'layout.blog-section': LayoutBlogSection;
+      'layout.contact-form': LayoutContactForm;
       'layout.cta': LayoutCta;
       'layout.footer': LayoutFooter;
       'layout.header': LayoutHeader;
       'layout.hero-section': LayoutHeroSection;
+      'layout.image-list': LayoutImageList;
       'layout.mini-gallery': LayoutMiniGallery;
       'layout.reviews': LayoutReviews;
+      'layout.service-item': LayoutServiceItem;
       'layout.services': LayoutServices;
       'layout.text-block': LayoutTextBlock;
+      'layout.text-image': LayoutTextImage;
+      'layout.work-preview': LayoutWorkPreview;
       'layout.work-process': LayoutWorkProcess;
     }
   }

@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_layout_image_lists",
+  "info": {
+    "displayName": "Image List"
+  },
+  "options": {},
+  "attributes": {
+    "image": {
+      "type": "component",
+      "repeatable": true,
+      "component": "components.gallery-image"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_components_gallery_images",
+  "info": {
+    "displayName": "Gallery Image",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "imageSize": {
+      "type": "enumeration",
+      "enum": [
+        "big",
+        "long",
+        "tall",
+        "normal"
+      ],
+      "default": "normal"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    }
+  }
+}

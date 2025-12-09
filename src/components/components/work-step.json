@@ -1,7 +1,8 @@
 {
   "collectionName": "components_components_work_steps",
   "info": {
-    "displayName": "WorkStep"
+    "displayName": "ServiceAttribute",
+    "description": ""
   },
   "options": {},
   "attributes": {
@@ -14,10 +15,7 @@
         "cloud"
       ]
     },
-    "title": {
-      "type": "string"
-    },
-    "description": {
+    "item": {
       "type": "text"
     }
   }
