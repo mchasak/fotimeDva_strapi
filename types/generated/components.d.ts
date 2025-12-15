@@ -116,8 +116,9 @@ export interface ComponentsWorkStep extends Struct.ComponentSchema {
     displayName: 'ServiceAttribute';
   };
   attributes: {
+    description: Schema.Attribute.String;
     icon: Schema.Attribute.Enumeration<['calendar', 'camera', 'edit', 'cloud']>;
-    item: Schema.Attribute.Text;
+    title: Schema.Attribute.String;
   };
 }
 
