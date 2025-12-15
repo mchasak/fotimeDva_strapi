@@ -15,8 +15,11 @@
         "cloud"
       ]
     },
-    "item": {
-      "type": "text"
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
     }
   }
 }
