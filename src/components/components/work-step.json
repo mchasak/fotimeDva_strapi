@@ -24,10 +24,7 @@
         "map"
       ]
     },
-    "title": {
-      "type": "string"
-    },
-    "description": {
+    "item": {
       "type": "string"
     }
   }
