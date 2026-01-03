@@ -12,7 +12,16 @@
         "calendar",
         "camera",
         "edit",
-        "cloud"
+        "cloud",
+        "archive",
+        "image",
+        "folder",
+        "hourglass",
+        "people",
+        "group",
+        "calendar1",
+        "compass",
+        "map"
       ]
     },
     "title": {
